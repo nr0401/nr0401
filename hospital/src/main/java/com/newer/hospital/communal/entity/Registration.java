@@ -4,14 +4,14 @@ import java.math.BigDecimal;
 import java.sql.Date;
 
 public class Registration {
-	int id;
-	Person person;
-	Date time;
-	BigDecimal total;
-	int status;
-	Doctor doctor;
-	int mark;
-	Dept dept;
+	private int id;
+	private Person person;
+	private Date time;
+	private BigDecimal total;
+	private int status;
+	private Doctor doctor;
+	private int mark;
+	private Dept dept;
 
 	public Registration() {
 		super();

@@ -3,14 +3,14 @@ package com.newer.hospital.communal.entity;
 import java.sql.Date;
 
 public class Prescription {
-	int id;
-	Doctor doctor;
-	Person person;
-	String text;
-	int status;
-	Date time;
-	Dept dept;
-	String drug;
+	private int id;
+	private Doctor doctor;
+	private Person person;
+	private String text;
+	private int status;
+	private Date time;
+	private Dept dept;
+	private String drug;
 
 	public Prescription() {
 		super();

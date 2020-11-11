@@ -3,12 +3,12 @@ package com.newer.hospital.communal.entity;
 import java.math.BigDecimal;
 
 public class Drug {
-	int id;
-	String title;
-	BigDecimal total;
-	String text;
-	int count;
-	Drugtype drugtype;
+	private int id;
+	private String title;
+	private BigDecimal total;
+	private String text;
+	private int count;
+	private Drugtype drugtype;
 
 	public Drug() {
 		super();

@@ -3,10 +3,10 @@ package com.newer.hospital.communal.entity;
 import java.math.BigDecimal;
 
 public class Paymenthistory {
-	int id;
-	Person person;
-	BigDecimal total;
-	java.sql.Date time;
+	private int id;
+	private Person person;
+	private BigDecimal total;
+	private java.sql.Date time;
 
 	public Paymenthistory() {
 		super();

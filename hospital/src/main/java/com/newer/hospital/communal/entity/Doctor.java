@@ -3,15 +3,15 @@ package com.newer.hospital.communal.entity;
 import java.math.BigDecimal;
 
 public class Doctor {
-	int id;
-	Dept dept;
-	String name;
-	String grnder;
-	int status;
-	String work;
-	String birthday;
-	BigDecimal total;
-	String position;
+	private int id;
+	private Dept dept;
+	private String name;
+	private String grnder;
+	private int status;
+	private String work;
+	private String birthday;
+	private BigDecimal total;
+	private String position;
 
 	public Doctor() {
 		super();

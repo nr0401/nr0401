@@ -3,10 +3,10 @@ package com.newer.hospital.communal.entity;
 import java.util.List;
 
 public class Drugtype {
-	int id;
-	String title;
-	int status;
-	List<Drug> druglist;
+	private int id;
+	private String title;
+	private int status;
+	private List<Drug> druglist;
 
 	public List<Drug> getDruglist() {
 		return druglist;

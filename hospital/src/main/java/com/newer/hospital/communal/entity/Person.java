@@ -1,12 +1,12 @@
 package com.newer.hospital.communal.entity;
 
 public class Person {
-	int id;
-	User user;
-	String identity;
-	String tel;
-	String gender;
-	String birthday;
+	private int id;
+	private User user;
+	private String identity;
+	private String tel;
+	private String gender;
+	private String birthday;
 
 	public Person() {
 		super();

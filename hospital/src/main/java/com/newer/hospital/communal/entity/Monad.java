@@ -1,9 +1,9 @@
 package com.newer.hospital.communal.entity;
 
 public class Monad {
-	int id;
-	Drug drug;
-	Prescription prescription;
+	private int id;
+	private Drug drug;
+	private Prescription prescription;
 
 	public Monad() {
 		super();

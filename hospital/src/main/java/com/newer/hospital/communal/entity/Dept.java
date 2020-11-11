@@ -3,10 +3,10 @@ package com.newer.hospital.communal.entity;
 import java.util.List;
 
 public class Dept {
-	int id;
-	String title;
-	String info;
-	List<Doctor> doctorlist;
+	private int id;
+	private String title;
+	private String info;
+	private List<Doctor> doctorlist;
 
 	public Dept() {
 		super();

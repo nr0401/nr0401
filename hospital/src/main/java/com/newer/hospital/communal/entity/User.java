@@ -3,13 +3,13 @@ package com.newer.hospital.communal.entity;
 import java.util.List;
 
 public class User {
-	int id;
-	String name;
-	int age;
-	String gender;
-	String tel;
-	String inentity;
-	List<Person> personlist;
+	private int id;
+	private String name;
+	private int age;
+	private String gender;
+	private String tel;
+	private String inentity;
+	private List<Person> personlist;
 
 	public User() {
 		super();
