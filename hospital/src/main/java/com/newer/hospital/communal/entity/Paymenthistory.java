@@ -1,12 +1,13 @@
 package com.newer.hospital.communal.entity;
 
 import java.math.BigDecimal;
+import java.sql.Date;
 
 public class Paymenthistory {
 	private int id;
 	private Person person;
 	private BigDecimal total;
-	private java.sql.Date time;
+	private Date time;
 
 	public Paymenthistory() {
 		super();
@@ -37,11 +38,11 @@ public class Paymenthistory {
 		this.total = total;
 	}
 
-	public java.sql.Date getTime() {
+	public Date getTime() {
 		return time;
 	}
 
-	public void setTime(java.sql.Date time) {
+	public void setTime(Date time) {
 		this.time = time;
 	}
 
