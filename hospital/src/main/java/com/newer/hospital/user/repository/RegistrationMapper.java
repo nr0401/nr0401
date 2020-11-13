@@ -29,7 +29,7 @@ public interface RegistrationMapper {
      * @return
      */
     @Insert("insert into registration(person_id,time,total,status,doctor_id,mark,dept_id) values(#{person.id},#{time},#{total},#{status},#{doctor.id},#{mark},#{dept.id})")
-    public Integer addRegistration(Registration registration);
+    Integer addRegistration(Registration registration);
 
 
     /**
@@ -38,7 +38,7 @@ public interface RegistrationMapper {
      * @return
      */
     @Select("select * from registration")
-    public List<Registration> allRegistration();
+    List<Registration> allRegistration();
 
     /**
      * 修改挂号人状态
@@ -47,7 +47,7 @@ public interface RegistrationMapper {
      * @return
      */
     @Update("update registration set status = 1 where id = id")
-    public Integer updateStatus(Integer id);
+    Integer updateStatus(Integer id);
 
 
 }

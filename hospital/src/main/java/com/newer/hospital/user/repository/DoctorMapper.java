@@ -24,5 +24,5 @@ public interface DoctorMapper {
      * @return
      */
     @Select("select * from doctor")
-    public List<Doctor> allDoctor();
+    List<Doctor> allDoctor();
 }

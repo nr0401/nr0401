@@ -26,7 +26,7 @@ public interface PersonMapper {
      * @return
      */
     @Insert("insert into person(user_id,identity,tel,gender,birthday) values(#{user.id},#{identity},#{tel},#{gender},#{birthday})")
-    public Integer addPerson(Person person);
+    Integer addPerson(Person person);
 
 
     /**
@@ -35,7 +35,7 @@ public interface PersonMapper {
      * @return
      */
     @Select("select * from person")
-    public List<Person> allPerson();
+    List<Person> allPerson();
 
 
     /**
@@ -45,7 +45,7 @@ public interface PersonMapper {
      * @return
      */
     @Update("update person set user_id=#{user.id},identity=#{identity},tel=#{tel},gender=#{gender},birthday=#{birthday} where id = #{id}")
-    public Integer updatePerson(Person person);
+    Integer updatePerson(Person person);
 
 
     /**
@@ -55,7 +55,7 @@ public interface PersonMapper {
      * @return
      */
     @Delete("delete from person where id = #{id}")
-    public Integer deletePerson(Integer id);
+    Integer deletePerson(Integer id);
 
 
 }

@@ -27,7 +27,7 @@ public interface DeptMapper {
      * @return
      */
     @Select("select * from dept")
-    public List<Dept> allDept();
+    List<Dept> allDept();
 
 
 }

@@ -24,7 +24,7 @@ public interface UserMapper {
      * @return
      */
     @Insert("insert into user(name,age,gender,tel,identity) values(#{name},#{age},#{gender},#{tel},#{identity})")
-    public Integer login(User user);
+     Integer login(User user);
 
 
 
