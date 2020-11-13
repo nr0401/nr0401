@@ -3,7 +3,10 @@ package com.newer.hospital.user.repository;
 import com.newer.hospital.communal.entity.User;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 /**
  * @author SongJinKang
@@ -24,9 +27,25 @@ public interface UserMapper {
      * @return
      */
     @Insert("insert into user(name,age,gender,tel,identity) values(#{name},#{age},#{gender},#{tel},#{identity})")
-     Integer login(User user);
+    Integer login(User user);
+
+    /**
+     * 获取全部用户
+     *
+     * @return
+     */
+    @Select("select * from user")
+    List<User> allUser();
 
 
+    /**
+     * 根据id获取用户
+     *
+     * @param id
+     * @return
+     */
+    @Select("select * from user where id = #{id}")
+    User userById(Integer id);
 
 
 }

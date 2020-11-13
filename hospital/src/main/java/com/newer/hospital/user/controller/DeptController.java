@@ -4,6 +4,7 @@ import com.newer.hospital.communal.entity.Dept;
 import com.newer.hospital.communal.entity.Doctor;
 import com.newer.hospital.user.service.DeptService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -35,5 +36,17 @@ public class DeptController {
     public List<Dept> getAllDept() {
         return deptService.getAllDept();
     }
+
+    /**
+     * 根据id查询科室
+     *
+     * @param id
+     * @return
+     */
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    public Dept deptById(@PathVariable Integer id) {
+        return deptService.deptById(id);
+    }
+
 
 }

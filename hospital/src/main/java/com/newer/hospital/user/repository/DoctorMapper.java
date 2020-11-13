@@ -1,5 +1,6 @@
 package com.newer.hospital.user.repository;
 
+import com.newer.hospital.communal.entity.Dept;
 import com.newer.hospital.communal.entity.Doctor;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
@@ -25,4 +26,14 @@ public interface DoctorMapper {
      */
     @Select("select * from doctor")
     List<Doctor> allDoctor();
+
+
+    /**
+     * 根据id查询医师
+     *
+     * @param id
+     * @return
+     */
+    @Select("select * from doctor where id = #{id}")
+    Doctor deptById(Integer id);
 }

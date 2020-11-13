@@ -37,6 +37,17 @@ public class PersonController {
     }
 
     /**
+     * 根据id获取就诊人
+     *
+     * @param id
+     * @return
+     */
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    public Person personById(@PathVariable Integer id) {
+        return personService.doctorById(id);
+    }
+
+    /**
      * 添加就诊人
      *
      * @param person

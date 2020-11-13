@@ -5,6 +5,8 @@ import com.newer.hospital.user.repository.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * @author SongJinKang
  * @version 1.0.0
@@ -31,9 +33,22 @@ public class UserService {
     }
 
 
+    /**
+     * 获取全部用户信息
+     *
+     * @return
+     */
+    public List<User> allUser() {
+        return userMapper.allUser();
+    }
 
-
-
-
-
+    /**
+     * 根据id查询用户
+     *
+     * @param id
+     * @return
+     */
+    public User userById(Integer id) {
+        return userMapper.userById(id);
+    }
 }

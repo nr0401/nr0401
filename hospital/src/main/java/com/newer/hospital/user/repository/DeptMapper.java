@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
 
+import javax.print.Doc;
 import java.util.List;
 
 /**
@@ -28,6 +29,15 @@ public interface DeptMapper {
      */
     @Select("select * from dept")
     List<Dept> allDept();
+
+    /**
+     * 根据id查询科室
+     *
+     * @param id
+     * @return
+     */
+    @Select("select * from dept where id = #{id}")
+    Dept deptById(Integer id);
 
 
 }

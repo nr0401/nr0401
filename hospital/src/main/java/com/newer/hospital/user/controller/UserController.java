@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 /**
  * @author SongJinKang
  * @version 1.0.0
@@ -36,4 +38,24 @@ public class UserController {
     }
 
 
+    /**
+     * 根据id获取用户
+     *
+     * @param id
+     * @return
+     */
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    public User userById(@PathVariable Integer id) {
+        return userService.userById(id);
+    }
+
+    /**
+     * 获取全部用户
+     *
+     * @return
+     */
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public List<User> allUser() {
+        return userService.allUser();
+    }
 }

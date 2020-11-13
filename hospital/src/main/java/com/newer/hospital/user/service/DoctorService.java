@@ -2,10 +2,12 @@ package com.newer.hospital.user.service;
 
 import com.newer.hospital.communal.entity.Doctor;
 import com.newer.hospital.user.repository.DoctorMapper;
+import com.sun.source.doctree.DocTree;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.print.Doc;
 import java.util.List;
 
 /**
@@ -28,5 +30,15 @@ public class DoctorService {
      */
     public List<Doctor> allDoctor() {
         return doctorMapper.allDoctor();
+    }
+
+    /**
+     * 根据id获取医师
+     *
+     * @param id
+     * @return
+     */
+    public Doctor doctorById(Integer id) {
+        return doctorMapper.deptById(id);
     }
 }

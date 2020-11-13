@@ -1,5 +1,6 @@
 package com.newer.hospital.user.service;
 
+import com.newer.hospital.communal.entity.Doctor;
 import com.newer.hospital.communal.entity.Person;
 import com.newer.hospital.user.repository.PersonMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +29,17 @@ public class PersonService {
      */
     public List<Person> allPerson() {
         return personMapper.allPerson();
+    }
+
+
+    /**
+     * 根据id获取就诊人
+     *
+     * @param id
+     * @return
+     */
+    public Person doctorById(Integer id) {
+        return personMapper.personById(id);
     }
 
     /**

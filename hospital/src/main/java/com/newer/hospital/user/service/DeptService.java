@@ -29,4 +29,15 @@ public class DeptService {
     public List<Dept> getAllDept() {
         return deptMapper.allDept();
     }
+
+
+    /**
+     * 根据id查询科室
+     *
+     * @param id
+     * @return
+     */
+    public Dept deptById(Integer id) {
+        return deptMapper.deptById(id);
+    }
 }

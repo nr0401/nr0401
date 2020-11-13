@@ -37,6 +37,15 @@ public interface PersonMapper {
     @Select("select * from person")
     List<Person> allPerson();
 
+    /**
+     * 根据id获取就诊人
+     *
+     * @param id
+     * @return
+     */
+    @Select("select * from person where id =#{id}")
+    Person personById(Integer id);
+
 
     /**
      * 修改就诊人信息
