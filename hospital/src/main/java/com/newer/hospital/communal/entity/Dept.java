@@ -3,51 +3,42 @@ package com.newer.hospital.communal.entity;
 import java.util.List;
 
 public class Dept {
-	private int id;
-	private String title;
-	private String info;
-	private List<Doctor> doctorlist;
+    private int id;
+    private String title;
+    private String info;
 
-	public Dept() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+    public Dept() {
+        // TODO Auto-generated constructor stub
+    }
 
-	public List<Doctor> getDoctorlist() {
-		return doctorlist;
-	}
 
-	public void setDoctorlist(List<Doctor> doctorlist) {
-		this.doctorlist = doctorlist;
-	}
+    public int getId() {
+        return id;
+    }
 
-	public int getId() {
-		return id;
-	}
+    public void setId(int id) {
+        this.id = id;
+    }
 
-	public void setId(int id) {
-		this.id = id;
-	}
+    public String getTitle() {
+        return title;
+    }
 
-	public String getTitle() {
-		return title;
-	}
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
-	public void setTitle(String title) {
-		this.title = title;
-	}
+    public String getInfo() {
+        return info;
+    }
 
-	public String getInfo() {
-		return info;
-	}
+    public void setInfo(String info) {
+        this.info = info;
+    }
 
-	public void setInfo(String info) {
-		this.info = info;
-	}
-
-	@Override
-	public String toString() {
-		return "Dept [id=" + id + ", title=" + title + ", info=" + info + ", doctorlist=" + doctorlist + "]";
-	}
+    @Override
+    public String toString() {
+        return "Dept [id=" + id + ", title=" + title + ", info=" + info + ", doctorlist=" + "]";
+    }
 
 }
