@@ -1,14 +1,12 @@
 package com.newer.hospital.communal.entity;
 
-import java.sql.Date;
-
 public class Prescription {
 	private int id;
 	private Doctor doctor;
 	private Person person;
 	private String text;
 	private int status;
-	private Date time;
+	private String time;
 	private Dept dept;
 	private String drug;
 
@@ -57,11 +55,11 @@ public class Prescription {
 		this.status = status;
 	}
 
-	public Date getTime() {
+	public String getTime() {
 		return time;
 	}
 
-	public void setTime(Date time) {
+	public void setTime(String time) {
 		this.time = time;
 	}
 
