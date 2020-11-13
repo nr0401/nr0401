@@ -46,6 +46,7 @@ public interface PersonMapper {
     @Select("select * from person where id =#{id}")
     Person personById(Integer id);
 
+    @Update("")
 
     /**
      * 修改就诊人信息

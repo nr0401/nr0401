@@ -30,8 +30,21 @@ public class RegistrationService {
      * @return
      */
     public Integer addRegistration(Registration registration) {
+        int[] arr = new int[10];
+        List<Registration> registrations = registrationMapper.allRegistration();
+        for (Registration r : registrations) {
+            arr[r.getMark() - 1] = r.getMark();
+        }
+        for (int i = 0; i < arr.length; i++) {
+            if (i == 0) {
+                registration.setMark(i);
+            }
+        }
         return registrationMapper.addRegistration(registration);
     }
+
+
+
 
     /**
      * 获取全部挂号单
