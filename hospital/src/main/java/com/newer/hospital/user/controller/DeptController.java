@@ -30,7 +30,7 @@ public class DeptController {
      *
      * @return
      */
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @RequestMapping(value = "", method = RequestMethod.GET)
     public List<Dept> getAllDept() {
         return deptService.getAllDept();
     }

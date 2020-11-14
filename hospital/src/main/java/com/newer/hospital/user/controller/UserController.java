@@ -51,7 +51,7 @@ public class UserController {
      *
      * @return
      */
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @RequestMapping(value = "", method = RequestMethod.GET)
     public List<User> allUser() {
         return userService.allUser();
     }

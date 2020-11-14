@@ -3,70 +3,79 @@ package com.newer.hospital.communal.entity;
 import java.math.BigDecimal;
 
 public class Drug {
-	private int id;
-	private String title;
-	private BigDecimal total;
-	private String text;
-	private int count;
-	private Drugtype drugtype;
+    private int id;
+    private String title;
+    private BigDecimal total;
+    private String text;
+    private int count;
+    private int drugtype_id;
+    private Drugtype drugtype;
 
-	public Drug() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+    public void setDrugtype_id(int drugtype_id) {
+        this.drugtype_id = drugtype_id;
+    }
 
-	public int getId() {
-		return id;
-	}
+    public int getDrugtype_id() {
+        return drugtype_id;
+    }
 
-	public void setId(int id) {
-		this.id = id;
-	}
+    public Drug() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
 
-	public String getTitle() {
-		return title;
-	}
+    public int getId() {
+        return id;
+    }
 
-	public void setTitle(String title) {
-		this.title = title;
-	}
+    public void setId(int id) {
+        this.id = id;
+    }
 
-	public BigDecimal getTotal() {
-		return total;
-	}
+    public String getTitle() {
+        return title;
+    }
 
-	public void setTotal(BigDecimal total) {
-		this.total = total;
-	}
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
-	public String getText() {
-		return text;
-	}
+    public BigDecimal getTotal() {
+        return total;
+    }
 
-	public void setText(String text) {
-		this.text = text;
-	}
+    public void setTotal(BigDecimal total) {
+        this.total = total;
+    }
 
-	public int getCount() {
-		return count;
-	}
+    public String getText() {
+        return text;
+    }
 
-	public void setCount(int count) {
-		this.count = count;
-	}
+    public void setText(String text) {
+        this.text = text;
+    }
 
-	public Drugtype getDrugtype() {
-		return drugtype;
-	}
+    public int getCount() {
+        return count;
+    }
 
-	public void setDrugtype(Drugtype drugtype) {
-		this.drugtype = drugtype;
-	}
+    public void setCount(int count) {
+        this.count = count;
+    }
 
-	@Override
-	public String toString() {
-		return "Drug [id=" + id + ", title=" + title + ", total=" + total + ", text=" + text + ", count=" + count
-				+ ", drugtype=" + drugtype + "]";
-	}
+    public Drugtype getDrugtype() {
+        return drugtype;
+    }
+
+    public void setDrugtype(Drugtype drugtype) {
+        this.drugtype = drugtype;
+    }
+
+    @Override
+    public String toString() {
+        return "Drug [id=" + id + ", title=" + title + ", total=" + total + ", text=" + text + ", count=" + count
+                + ", drugtype=" + drugtype + "]";
+    }
 
 }

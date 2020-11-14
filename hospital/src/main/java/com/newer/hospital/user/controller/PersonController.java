@@ -28,7 +28,7 @@ public class PersonController {
      *
      * @return
      */
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @RequestMapping(value = "", method = RequestMethod.GET)
     public List<Person> allPerson() {
         return personService.allPerson();
     }

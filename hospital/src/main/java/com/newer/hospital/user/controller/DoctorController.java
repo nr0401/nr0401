@@ -30,7 +30,7 @@ public class DoctorController {
      *
      * @return
      */
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @RequestMapping(value = "", method = RequestMethod.GET)
     public List<Doctor> getAllDoctor() {
         return doctorService.allDoctor();
     }

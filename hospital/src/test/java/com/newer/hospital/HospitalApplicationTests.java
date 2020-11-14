@@ -1,9 +1,7 @@
 package com.newer.hospital;
 
-import com.newer.hospital.communal.entity.Dept;
-import com.newer.hospital.communal.entity.Doctor;
-import com.newer.hospital.communal.entity.Person;
-import com.newer.hospital.communal.entity.Registration;
+import com.newer.hospital.communal.entity.*;
+import com.newer.hospital.pharmacy.controller.DrugController;
 import com.newer.hospital.user.repository.DeptMapper;
 import com.newer.hospital.user.repository.PersonMapper;
 import com.newer.hospital.user.repository.RegistrationMapper;
@@ -14,6 +12,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 
 @SpringBootTest
 class HospitalApplicationTests {
@@ -31,6 +30,13 @@ class HospitalApplicationTests {
 
     @Autowired
     RegistrationMapper registrationMapper;
+
+    @Test
+    void t() {
+        DrugController drugController = new DrugController();
+        List<Drug> alldrug = drugController.alldrug();
+        System.out.println(alldrug);
+    }
 
     @Test
     void contextLoads() {
