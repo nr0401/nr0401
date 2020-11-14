@@ -29,8 +29,8 @@ public class UserController {
      * @param user
      * @return
      */
-    @RequestMapping(value = "/login/{user}", method = RequestMethod.POST)
-    public Integer login(@PathVariable User user) {
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    public Integer login(@RequestBody User user) {
         return userService.login(user);
     }
 

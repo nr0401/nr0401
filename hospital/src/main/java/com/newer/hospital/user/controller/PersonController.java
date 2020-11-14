@@ -50,8 +50,8 @@ public class PersonController {
      * @param person
      * @return
      */
-    @RequestMapping(value = "/{person}", method = RequestMethod.POST)
-    public Integer addPerson(@PathVariable Person person) {
+    @RequestMapping(value = "/add", method = RequestMethod.POST)
+    public Integer addPerson(@RequestBody Person person) {
         return personService.addPerson(person);
     }
 
@@ -61,8 +61,8 @@ public class PersonController {
      * @param person
      * @return
      */
-    @RequestMapping(value = "/update/{person}", method = RequestMethod.PUT)
-    public Integer updatePerson(@PathVariable Person person) {
+    @RequestMapping(value = "/update/", method = RequestMethod.PUT)
+    public Integer updatePerson(@RequestBody Person person) {
         return personService.updatePerson(person);
     }
 

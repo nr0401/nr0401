@@ -50,8 +50,8 @@ public class RegistrationController {
      * @param registration
      * @return
      */
-    @RequestMapping(value = "/registration/{registration}", method = RequestMethod.POST)
-    public Integer addRegistration(@PathVariable Registration registration) {
+    @RequestMapping(value = "/registration/add", method = RequestMethod.POST)
+    public Integer addRegistration(@RequestBody Registration registration) {
         return registrationService.addRegistration(registration);
     }
 
