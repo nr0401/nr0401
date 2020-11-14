@@ -39,12 +39,12 @@ public class RegistrationController {
     /**
      * 修改挂号单状态
      *
-     * @param id
+     * @param personId
      * @return
      */
-    @RequestMapping(value = "/registration/{id}", method = RequestMethod.PUT)
-    public Integer updateStatus(@PathVariable Integer id) {
-        return registrationService.updateStatus(id);
+    @RequestMapping(value = "/registration/{personId}", method = RequestMethod.PUT)
+    public Integer updateStatus(@PathVariable Integer personId) {
+        return registrationService.updateStatus(personId);
     }
 
     /**

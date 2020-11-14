@@ -18,7 +18,7 @@ import java.util.List;
 
 @CrossOrigin
 @RestController
-@RequestMapping("dept")
+@RequestMapping("/dept")
 public class DeptController {
 
     @Autowired

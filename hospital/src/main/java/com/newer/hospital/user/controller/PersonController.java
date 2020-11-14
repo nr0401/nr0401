@@ -54,7 +54,7 @@ public class PersonController {
      * @return
      */
     @RequestMapping(value = "/{person}", method = RequestMethod.POST)
-    public Integer addPerson(Person person) {
+    public Integer addPerson(@PathVariable Person person) {
         return personService.addPerson(person);
     }
 

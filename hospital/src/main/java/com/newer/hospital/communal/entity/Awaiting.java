@@ -1,6 +1,5 @@
 package com.newer.hospital.communal.entity;
 
-import javax.print.Doc;
 
 /**
  * @author SongJinKang
