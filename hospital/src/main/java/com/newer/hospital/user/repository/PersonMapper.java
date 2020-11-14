@@ -1,6 +1,7 @@
 package com.newer.hospital.user.repository;
 
 import com.newer.hospital.communal.entity.Person;
+import com.newer.hospital.communal.entity.User;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
 
@@ -34,6 +35,12 @@ public interface PersonMapper {
      *
      * @return
      */
+    @Results(id = "personMap", value = {
+            @Result(column = "user_id", property = "user",
+                    javaType = User.class,
+                    one = @One(select = "com.newer.hospital.user.repository.UserMapper.userById")
+            )
+    })
     @Select("select * from person")
     List<Person> allPerson();
 
@@ -43,6 +50,7 @@ public interface PersonMapper {
      * @param id
      * @return
      */
+    @ResultMap("personMap")
     @Select("select * from person where id =#{id}")
     Person personById(Integer id);
 

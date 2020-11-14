@@ -2,8 +2,7 @@ package com.newer.hospital.user.repository;
 
 import com.newer.hospital.communal.entity.Dept;
 import com.newer.hospital.communal.entity.Doctor;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -24,6 +23,13 @@ public interface DoctorMapper {
      *
      * @return
      */
+    @Results(id = "doctorMap", value = {
+            @Result(column = "dept_id",
+                    property = "dept",
+                    javaType = Dept.class,
+                    one = @One(select = "com.newer.hospital.user.repository.DeptMapper.deptById")
+            )
+    })
     @Select("select * from doctor")
     List<Doctor> allDoctor();
 
@@ -34,6 +40,7 @@ public interface DoctorMapper {
      * @param id
      * @return
      */
+    @ResultMap("doctorMap")
     @Select("select * from doctor where id = #{id}")
     Doctor deptById(Integer id);
 }
