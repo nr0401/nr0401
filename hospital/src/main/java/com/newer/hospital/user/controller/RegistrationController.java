@@ -31,7 +31,7 @@ public class RegistrationController {
      *
      * @return
      */
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @RequestMapping(value = "/registration/", method = RequestMethod.GET)
     public List<Registration> allRegistration() {
         return registrationService.allRegistration();
     }
@@ -53,8 +53,19 @@ public class RegistrationController {
      * @param registration
      * @return
      */
-    @RequestMapping(value = "/{registration}", method = RequestMethod.POST)
+    @RequestMapping(value = "/registration/{registration}", method = RequestMethod.POST)
     public Integer addRegistration(@PathVariable Registration registration) {
         return registrationService.addRegistration(registration);
+    }
+
+    /**
+     * 修改挂号人预约
+     *
+     * @param personId
+     * @return
+     */
+    @RequestMapping(value = "/registration/appointment/{personId}", method = RequestMethod.PUT)
+    public Integer updateAppointment(@PathVariable Integer personId) {
+        return registrationService.updateAppointment(personId);
     }
 }

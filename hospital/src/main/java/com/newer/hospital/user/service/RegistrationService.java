@@ -5,6 +5,8 @@ import com.newer.hospital.user.repository.RegistrationMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -30,20 +32,8 @@ public class RegistrationService {
      * @return
      */
     public Integer addRegistration(Registration registration) {
-        int[] arr = new int[10];
-        List<Registration> registrations = registrationMapper.allRegistration();
-        for (Registration r : registrations) {
-            arr[r.getMark() - 1] = r.getMark();
-        }
-        for (int i = 0; i < arr.length; i++) {
-            if (i == 0) {
-                registration.setMark(i);
-            }
-        }
         return registrationMapper.addRegistration(registration);
     }
-
-
 
 
     /**
@@ -59,11 +49,21 @@ public class RegistrationService {
     /**
      * 修改挂号状态
      *
-     * @param id
+     * @param personId
      * @return
      */
-    public Integer updateStatus(Integer id) {
-        return registrationMapper.updateStatus(id);
+    public Integer updateStatus(Integer personId) {
+        return registrationMapper.updateStatus(personId);
     }
 
+
+    /**
+     * 修改挂号人是否预约（1.预约，0，取消预约）
+     *
+     * @param personId
+     * @return
+     */
+    public Integer updateAppointment(Integer personId) {
+        return registrationMapper.updateAppointment(personId);
+    }
 }

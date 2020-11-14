@@ -1,7 +1,8 @@
 package com.newer.hospital.communal.entity;
 
 import java.math.BigDecimal;
-import java.sql.Date;
+import java.util.Date;
+
 
 public class Registration {
     private int id;
@@ -13,6 +14,8 @@ public class Registration {
     private int mark;
     private Dept dept;
     private Integer appointment;
+    private String visitTime;
+    private String dayTime;
 
     public Registration() {
         super();
@@ -91,6 +94,22 @@ public class Registration {
         this.appointment = appointment;
     }
 
+    public String getVisitTime() {
+        return visitTime;
+    }
+
+    public void setVisitTime(String visitTime) {
+        this.visitTime = visitTime;
+    }
+
+    public String getDayTime() {
+        return dayTime;
+    }
+
+    public void setDayTime(String dayTime) {
+        this.dayTime = dayTime;
+    }
+
     @Override
     public String toString() {
         return "Registration{" +
@@ -103,6 +122,8 @@ public class Registration {
                 ", mark=" + mark +
                 ", dept=" + dept +
                 ", appointment=" + appointment +
+                ", visitTime='" + visitTime + '\'' +
+                ", dayTime='" + dayTime + '\'' +
                 '}';
     }
 }

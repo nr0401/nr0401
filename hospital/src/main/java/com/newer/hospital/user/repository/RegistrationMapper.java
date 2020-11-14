@@ -1,6 +1,7 @@
 package com.newer.hospital.user.repository;
 
 import com.newer.hospital.communal.entity.Registration;
+import com.newer.hospital.communal.entity.User;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
@@ -28,7 +29,7 @@ public interface RegistrationMapper {
      * @param registration
      * @return
      */
-    @Insert("insert into registration(person_id,time,total,status,doctor_id,mark,dept_id) values(#{person.id},#{time},#{total},#{status},#{doctor.id},#{mark},#{dept.id})")
+    @Insert("insert into registration(person_id,time,total,status,doctor_id,mark,dept_id,visit_time,day_time) values(#{person.id},#{time},#{total},#{status},#{doctor.id},#{mark},#{dept.id},#{visitTime},#{dayTime})")
     Integer addRegistration(Registration registration);
 
 
@@ -41,13 +42,23 @@ public interface RegistrationMapper {
     List<Registration> allRegistration();
 
     /**
-     * 修改挂号人状态
+     * 修改挂号人状态(签到)
      *
-     * @param id
+     * @param personId
      * @return
      */
-    @Update("update registration set status = 1 where id = id")
-    Integer updateStatus(Integer id);
+    @Update("update registration set status = 1 where person_id = #{personId}")
+    Integer updateStatus(Integer personId);
+
+
+    /**
+     * 修改用户是否预约
+     *
+     * @param personId
+     * @return
+     */
+    @Update("update registration set appointment = 0 where person_id = #{personId}")
+    Integer updateAppointment(Integer personId);
 
 
 }

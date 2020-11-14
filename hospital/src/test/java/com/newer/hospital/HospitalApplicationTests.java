@@ -1,5 +1,9 @@
 package com.newer.hospital;
 
+import com.newer.hospital.communal.entity.Dept;
+import com.newer.hospital.communal.entity.Doctor;
+import com.newer.hospital.communal.entity.Person;
+import com.newer.hospital.communal.entity.Registration;
 import com.newer.hospital.user.repository.DeptMapper;
 import com.newer.hospital.user.repository.PersonMapper;
 import com.newer.hospital.user.repository.RegistrationMapper;
@@ -7,6 +11,9 @@ import com.newer.hospital.user.repository.UserMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+
+import java.math.BigDecimal;
+import java.util.Date;
 
 @SpringBootTest
 class HospitalApplicationTests {
@@ -27,7 +34,27 @@ class HospitalApplicationTests {
 
     @Test
     void contextLoads() {
-        Integer integer = registrationMapper.updateStatus(1);
+        ;
+        Registration registration = new Registration();
+        Doctor doctor = new Doctor();
+        doctor.setId(1);
+        registration.setDoctor(doctor);
+        Person person = new Person();
+        person.setId(1);
+        registration.setPerson(person);
+        Dept dept = new Dept();
+        dept.setId(2);
+        registration.setDept(dept);
+        registration.setTime(new Date());
+        registration.setTotal(BigDecimal.valueOf(55));
+        registration.setVisitTime(new Date().toLocaleString());
+        registration.setDayTime("am");
+        registrationMapper.addRegistration(registration);
+    }
+
+    @Test
+    void test() {
+        Integer integer = registrationMapper.updateAppointment(1);
         System.out.println(integer);
     }
 
