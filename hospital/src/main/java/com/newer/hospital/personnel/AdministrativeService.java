@@ -1,13 +1,12 @@
 package com.newer.hospital.personnel;
 
-import java.lang.annotation.Documented;
 import java.util.List;
 
+import com.newer.hospital.communal.util.mapper.DoctorMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.newer.hospital.communal.entity.Doctor;
-import com.newer.hospital.communal.util.mapper.DoctorMapper;
 
 @Service
 public class AdministrativeService {
