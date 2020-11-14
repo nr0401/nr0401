@@ -3,10 +3,7 @@ package com.newer.hospital.user.controller;
 import com.newer.hospital.communal.entity.Registration;
 import com.newer.hospital.user.service.RegistrationService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -17,7 +14,7 @@ import java.util.List;
  * @Description TODO
  * @createTime 2020年11月13日 11:26:00
  */
-
+@CrossOrigin
 @RestController
 @RequestMapping("/user")
 public class RegistrationController {
