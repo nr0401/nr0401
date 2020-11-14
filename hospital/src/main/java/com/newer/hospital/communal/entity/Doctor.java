@@ -3,97 +3,107 @@ package com.newer.hospital.communal.entity;
 import java.math.BigDecimal;
 
 public class Doctor {
-	private int id;
-	private Dept dept;
-	private String name;
-	private String grnder;
-	private int status;
-	private String work;
-	private String birthday;
-	private BigDecimal total;
-	private String position;
+    private int id;
+    private Dept dept;
+    private int dept_id;
 
-	public Doctor() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+    public int getDept_id() {
+        return dept_id;
+    }
 
-	public int getId() {
-		return id;
-	}
+    public void setDept_id(int dept_id) {
+        this.dept_id = dept_id;
+    }
 
-	public void setId(int id) {
-		this.id = id;
-	}
+    private String name;
+    private String gender;
+    private int status;
+    private String work;
+    private String birthday;
+    private BigDecimal total;
+    private String position;
 
-	public Dept getDept() {
-		return dept;
-	}
+    public Doctor() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
 
-	public void setDept(Dept dept) {
-		this.dept = dept;
-	}
+    public int getId() {
+        return id;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public void setId(int id) {
+        this.id = id;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public Dept getDept() {
+        return dept;
+    }
 
-	public String getGrnder() {
-		return grnder;
-	}
+    public void setDept(Dept dept) {
+        this.dept = dept;
+    }
 
-	public void setGrnder(String grnder) {
-		this.grnder = grnder;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public int getStatus() {
-		return status;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public void setStatus(int status) {
-		this.status = status;
-	}
+    public String getGrnder() {
+        return gender;
+    }
 
-	public String getWork() {
-		return work;
-	}
+    public void setGrnder(String gender) {
+        this.gender = gender;
+    }
 
-	public void setWork(String work) {
-		this.work = work;
-	}
+    public int getStatus() {
+        return status;
+    }
 
-	public String getBirthday() {
-		return birthday;
-	}
+    public void setStatus(int status) {
+        this.status = status;
+    }
 
-	public void setBirthday(String birthday) {
-		this.birthday = birthday;
-	}
+    public String getWork() {
+        return work;
+    }
 
-	public BigDecimal getTotal() {
-		return total;
-	}
+    public void setWork(String work) {
+        this.work = work;
+    }
 
-	public void setTotal(BigDecimal total) {
-		this.total = total;
-	}
+    public String getBirthday() {
+        return birthday;
+    }
 
-	public String getPosition() {
-		return position;
-	}
+    public void setBirthday(String birthday) {
+        this.birthday = birthday;
+    }
 
-	public void setPosition(String position) {
-		this.position = position;
-	}
+    public BigDecimal getTotal() {
+        return total;
+    }
 
-	@Override
-	public String toString() {
-		return "Doctor [id=" + id + ", dept=" + dept + ", name=" + name + ", grnder=" + grnder + ", status=" + status
-				+ ", work=" + work + ", birthday=" + birthday + ", total=" + total + ", position=" + position + "]";
-	}
+    public void setTotal(BigDecimal total) {
+        this.total = total;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
+    }
+
+    @Override
+    public String toString() {
+        return "Doctor [id=" + id + ", dept=" + dept + ", name=" + name + ", grnder=" + gender + ", status=" + status
+                + ", work=" + work + ", birthday=" + birthday + ", total=" + total + ", position=" + position + "]";
+    }
 
 }
