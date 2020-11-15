@@ -6,19 +6,19 @@ public class Dept {
 	private int id;
 	private String title;
 	private String info;
-	private List<Doctor> doctorlist;
+	private Directory directory;
 
 	public Dept() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public List<Doctor> getDoctorlist() {
-		return doctorlist;
+	public Directory getDirectory() {
+		return directory;
 	}
 
-	public void setDoctorlist(List<Doctor> doctorlist) {
-		this.doctorlist = doctorlist;
+	public void setDirectory(Directory directory) {
+		this.directory = directory;
 	}
 
 	public int getId() {
@@ -47,7 +47,11 @@ public class Dept {
 
 	@Override
 	public String toString() {
-		return "Dept [id=" + id + ", title=" + title + ", info=" + info + ", doctorlist=" + doctorlist + "]";
+		return "Dept{" +
+				"id=" + id +
+				", title='" + title + '\'' +
+				", info='" + info + '\'' +
+				", directory=" + directory +
+				'}';
 	}
-
 }

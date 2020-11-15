@@ -6,15 +6,7 @@ public class Drugtype {
     private int id;
     private String title;
     private int status;
-    private List<Drug> druglist;
 
-    public List<Drug> getDruglist() {
-        return druglist;
-    }
-
-    public void setDruglist(List<Drug> druglist) {
-        this.druglist = druglist;
-    }
 
     public Drugtype() {
         super();
@@ -47,7 +39,10 @@ public class Drugtype {
 
     @Override
     public String toString() {
-        return "Drugtype [id=" + id + ", title=" + title + ", status=" + status + ", druglist=" + druglist + "]";
+        return "Drugtype{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", status=" + status +
+                '}';
     }
-
 }

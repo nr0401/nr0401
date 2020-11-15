@@ -23,15 +23,16 @@ public class PaymentService {
     @Autowired
     PersonMapper personMapper;
 
-    public void a(Prescription presciption, BigDecimal total) {
+    public void a(int id) {
 
-        presciptionMapper.setStatus(presciption);
-        Paymenthistory p = new Paymenthistory();
-        Person person = personMapper.personById(presciption.getPerson_id());
-        p.setPerson(person);
-        p.setTotal(total);
-        p.setTime(new Date(new java.util.Date().getTime()));
-        paymenthisoryMapper.save(p);
+        Prescription pre = presciptionMapper.find(id);
+        presciptionMapper.setStatus(pre);
+        Paymenthistory pay = new Paymenthistory();
+       // Person person = personMapper.personById(presciption.getPerson_id());
+        pay.setPerson(pre.getPerson());
+        pay.setTotal(pre.getTotal());
+        pay.setTime(new Date(new java.util.Date().getTime()));
+        paymenthisoryMapper.save(pay);
 
     }
 

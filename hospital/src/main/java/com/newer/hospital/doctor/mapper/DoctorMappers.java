@@ -25,7 +25,6 @@ public interface DoctorMappers {
 	@Results(id = "deptmap",
 			value = {
 					@Result(column = "title",property = "title")
-					
 			})
 	@Select("select * from dept where id = #{id}")
 	Dept deptId(int id);

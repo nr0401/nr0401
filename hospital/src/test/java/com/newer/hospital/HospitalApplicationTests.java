@@ -1,7 +1,7 @@
 package com.newer.hospital;
 
 import com.newer.hospital.communal.entity.*;
-import com.newer.hospital.pharmacy.controller.DrugController;
+import com.newer.hospital.dept.DirectoryMapper;
 import com.newer.hospital.user.repository.DeptMapper;
 import com.newer.hospital.user.repository.PersonMapper;
 import com.newer.hospital.user.repository.RegistrationMapper;
@@ -31,11 +31,18 @@ class HospitalApplicationTests {
     @Autowired
     RegistrationMapper registrationMapper;
 
+    @Autowired
+    DirectoryMapper directoryMapper;
+
+    @Test
+    public void i() {
+        List<Directory> directories = directoryMapper.allDirectory();
+        System.out.println(directories);
+    }
+
     @Test
     void t() {
-        DrugController drugController = new DrugController();
-        List<Drug> alldrug = drugController.alldrug();
-        System.out.println(alldrug);
+
     }
 
     @Test

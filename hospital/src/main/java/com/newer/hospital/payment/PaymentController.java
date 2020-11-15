@@ -29,12 +29,12 @@ public class PaymentController {
 	/**
 	 * 提交缴费信息
 	 * 
-	 * @param prescription
+	 * @param prescription.id
 	 * @return
 	 */
-	@PostMapping("/{total}")
-	void a(@RequestBody Prescription prescription, @PathVariable BigDecimal total) {
-		paymentService.a(prescription, total);
+	@PostMapping("/{id}")
+	void a( @PathVariable int id) {
+		paymentService.a(id);
 
 	}
 

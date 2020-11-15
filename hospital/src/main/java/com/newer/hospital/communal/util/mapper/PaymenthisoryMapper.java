@@ -15,36 +15,36 @@ import com.newer.hospital.communal.entity.Person;
 
 @Mapper
 public interface PaymenthisoryMapper {
-	/**
-	 * 获取单个
-	 * 
-	 * @param id
-	 * @return
-	 */
-	@Select("select * from paymenthistory where id = #{id}")
-	@Results(id = "paymenthisory", value = { @Result(column = "id", property = "id"),
-			@Result(column = "id", property = "person", javaType = Person.class, one = @One(select = "findperson")) })
-	Paymenthistory find(int id);
+    /**
+     * 获取单个
+     *
+     * @param id
+     * @return
+     */
+    @Select("select * from paymenthistory where id = #{id}")
+    @Results(id = "paymenthisory", value = {@Result(column = "id", property = "id"),
+            @Result(column = "id", property = "person", javaType = Person.class, one = @One(select = "findperson"))})
+    Paymenthistory find(int id);
 
-	/**
-	 * 获取所有
-	 * 
-	 * @return
-	 */
-	@Select("select * from paymenthistory")
-	@ResultMap("paymenthisory")
-	List<Paymenthistory> findAll();
+    /**
+     * 获取所有
+     *
+     * @return
+     */
+    @Select("select * from paymenthistory")
+    @ResultMap("paymenthisory")
+    List<Paymenthistory> findAll();
 
-	/**
-	 * 创建
-	 * 
-	 * @param paymenthistory
-	 */
-	@Insert("insert into paymenthistory(person_id,total) values(#{person.id},#{total})")
-	void save(Paymenthistory paymenthistory);
+    /**
+     * 创建
+     *
+     * @param paymenthistory
+     */
+    @Insert("insert into paymenthistory(person_id,total) values(#{person.id},#{total})")
+    void save(Paymenthistory paymenthistory);
 
-	@Select("select id,name,gender,tel,identity from person where id = #{id}")
-	@Results(value = { @Result(column = "id", property = "id") })
-	Person findperson(int id);
+    @Select("select id,name,gender,tel,identity from person where id = #{id}")
+    @Results(value = {@Result(column = "id", property = "id")})
+    Person findperson(int id);
 
 }

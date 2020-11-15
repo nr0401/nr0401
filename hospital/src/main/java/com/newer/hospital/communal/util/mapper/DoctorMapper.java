@@ -22,7 +22,6 @@ public interface DoctorMapper {
      */
     @Select("SELECT * FROM doctor a,dept b  WHERE a.`dept_id`=b.`id` and a.id = #{id}")
     @Results({@Result(property = "id", column = "id"),
-
             @Result(property = "dept.title", column = "title"),
             @Result(property = "dept.info", column = "info"),
             @Result(property = "name", column = "name"),
@@ -30,8 +29,6 @@ public interface DoctorMapper {
             @Result(property = "birthday", column = "birthday"),
             @Result(property = "total", column = "total"),
             @Result(property = "position", column = "position")
-
-
     })
     public Doctor OneDoctor(int id);
 
