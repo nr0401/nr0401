@@ -9,13 +9,20 @@ public class User {
 	private String gender;
 	private String tel;
 	private String inentity;
+	private List<Person> personlist;
 
 	public User() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	
+	public List<Person> getPersonlist() {
+		return personlist;
+	}
+
+	public void setPersonlist(List<Person> personlist) {
+		this.personlist = personlist;
+	}
 
 	public int getId() {
 		return id;
@@ -68,7 +75,7 @@ public class User {
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", name=" + name + ", age=" + age + ", gender=" + gender + ", tel=" + tel
-				+ ", inentity=" + inentity +  "]";
+				+ ", inentity=" + inentity + ", personlist=" + personlist + "]";
 	}
 
 }
