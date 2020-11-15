@@ -3,6 +3,7 @@ package com.newer.hospital.payment;
 import java.math.BigDecimal;
 import java.util.List;
 
+import com.newer.hospital.communal.util.mapper.PresciptionMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
@@ -11,7 +12,6 @@ import org.springframework.web.bind.annotation.*;
 import com.newer.hospital.communal.entity.Paymenthistory;
 import com.newer.hospital.communal.entity.Prescription;
 import com.newer.hospital.communal.util.mapper.PaymenthisoryMapper;
-import com.newer.hospital.communal.util.mapper.PresciptionMapper;
 
 @CrossOrigin
 @EnableAutoConfiguration(exclude = { SecurityAutoConfiguration.class })

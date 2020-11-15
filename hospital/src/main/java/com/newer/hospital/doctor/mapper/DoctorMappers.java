@@ -20,7 +20,7 @@ import com.newer.hospital.communal.entity.Registration;
 
 
 @Mapper
-public interface DoctorMapper {
+public interface DoctorMappers {
 	
 	@Results(id = "deptmap",
 			value = {

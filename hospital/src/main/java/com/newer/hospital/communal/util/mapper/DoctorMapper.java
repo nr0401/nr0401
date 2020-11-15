@@ -13,7 +13,7 @@ import org.apache.ibatis.annotations.Update;
 import com.newer.hospital.communal.entity.Doctor;
 
 @Mapper
-public interface DoctorMappers {
+public interface DoctorMapper {
     /**
      * 获取单个
      *

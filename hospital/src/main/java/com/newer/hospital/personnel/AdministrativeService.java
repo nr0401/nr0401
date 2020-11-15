@@ -2,6 +2,7 @@ package com.newer.hospital.personnel;
 
 import java.util.List;
 
+
 import com.newer.hospital.communal.util.mapper.DoctorMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,7 +24,6 @@ public class AdministrativeService {
         return doctormapper.AllDoctor();
     }
 
-    ;
 
     /**
      * 显示单个医师
@@ -33,8 +33,6 @@ public class AdministrativeService {
 
         return doctormapper.OneDoctor(id);
     }
-
-    ;
 
 
     /**
@@ -49,7 +47,6 @@ public class AdministrativeService {
 
     }
 
-    ;
 
     /**
      * 添加医师
