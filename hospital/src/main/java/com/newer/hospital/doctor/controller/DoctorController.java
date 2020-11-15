@@ -4,18 +4,14 @@ import java.util.List;
 
 import com.newer.hospital.doctor.mapper.DoctorMappers;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import com.alibaba.fastjson.JSONObject;
 import com.newer.hospital.communal.entity.Doctor;
 import com.newer.hospital.communal.entity.Prescription;
 import com.newer.hospital.communal.entity.Registration;
 
+
+@CrossOrigin
 @RestController
 @RequestMapping("/doctor")
 public class DoctorController {
