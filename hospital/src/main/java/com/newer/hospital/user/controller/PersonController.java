@@ -61,7 +61,7 @@ public class PersonController {
      * @param person
      * @return
      */
-    @RequestMapping(value = "/update/", method = RequestMethod.PUT)
+    @RequestMapping(value = "/update", method = RequestMethod.PUT)
     public Integer updatePerson(@RequestBody Person person) {
         return personService.updatePerson(person);
     }

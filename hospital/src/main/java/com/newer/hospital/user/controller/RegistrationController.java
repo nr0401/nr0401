@@ -28,7 +28,7 @@ public class RegistrationController {
      *
      * @return
      */
-    @RequestMapping(value = "/registration/", method = RequestMethod.GET)
+    @RequestMapping(value = "/registration", method = RequestMethod.GET)
     public List<Registration> allRegistration() {
         return registrationService.allRegistration();
     }
