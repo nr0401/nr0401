@@ -1,14 +1,26 @@
 package com.newer.hospital.communal.entity;
 
+import java.math.BigDecimal;
+
 public class Prescription {
 	private int id;
-	private Doctor doctor;
-	private Person person;
+	private int doctor_id;
+	private int person_id;
 	private String text;
 	private int status;
 	private String time;
-	private Dept dept;
+	private int dept_id;
 	private String drug;
+	private BigDecimal total;
+
+	
+	public BigDecimal getTotal() {
+		return total;
+	}
+
+	public void setTotal(BigDecimal total) {
+		this.total = total;
+	}
 
 	public Prescription() {
 		super();
@@ -23,20 +35,29 @@ public class Prescription {
 		this.id = id;
 	}
 
-	public Doctor getDoctor() {
-		return doctor;
+
+	public int getDoctor_id() {
+		return doctor_id;
 	}
 
-	public void setDoctor(Doctor doctor) {
-		this.doctor = doctor;
+	public void setDoctor_id(int doctor_id) {
+		this.doctor_id = doctor_id;
 	}
 
-	public Person getPerson() {
-		return person;
+	public int getPerson_id() {
+		return person_id;
 	}
 
-	public void setPerson(Person person) {
-		this.person = person;
+	public void setPerson_id(int person_id) {
+		this.person_id = person_id;
+	}
+
+	public int getDept_id() {
+		return dept_id;
+	}
+
+	public void setDept_id(int dept_id) {
+		this.dept_id = dept_id;
 	}
 
 	public String getText() {
@@ -63,13 +84,6 @@ public class Prescription {
 		this.time = time;
 	}
 
-	public Dept getDept() {
-		return dept;
-	}
-
-	public void setDept(Dept dept) {
-		this.dept = dept;
-	}
 
 	public String getDrug() {
 		return drug;
@@ -81,8 +95,10 @@ public class Prescription {
 
 	@Override
 	public String toString() {
-		return "Prescription [id=" + id + ", doctor=" + doctor + ", person=" + person + ", text=" + text + ", status="
-				+ status + ", time=" + time + ", dept=" + dept + ", drug=" + drug + "]";
+		return "Prescription [id=" + id + ", doctor_id=" + doctor_id + ", person_id=" + person_id + ", text=" + text
+				+ ", status=" + status + ", time=" + time + ", dept_id=" + dept_id + ", drug=" + drug + "]";
 	}
+
+
 
 }

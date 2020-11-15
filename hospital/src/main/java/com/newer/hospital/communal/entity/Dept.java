@@ -6,10 +6,22 @@ public class Dept {
     private int id;
     private String title;
     private String info;
+    private int directory_id;
+
 
     public Dept() {
         super();
         // TODO Auto-generated constructor stub
+    }
+
+
+    public int getDirectory_id() {
+        return directory_id;
+    }
+
+
+    public void setDirectory_id(int directory_id) {
+        this.directory_id = directory_id;
     }
 
 
@@ -39,10 +51,7 @@ public class Dept {
 
     @Override
     public String toString() {
-        return "Dept{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", info='" + info + '\'' +
-                '}';
+        return "Dept [id=" + id + ", title=" + title + ", info=" + info + ",  ]";
     }
+
 }
