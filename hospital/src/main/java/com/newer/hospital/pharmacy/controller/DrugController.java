@@ -15,7 +15,6 @@ import com.newer.hospital.communal.entity.Prescription;
 @Controller
 @CrossOrigin
 @RestController
-@EnableAutoConfiguration(exclude = {SecurityAutoConfiguration.class})
 @RequestMapping("drug")
 public class DrugController {
 
