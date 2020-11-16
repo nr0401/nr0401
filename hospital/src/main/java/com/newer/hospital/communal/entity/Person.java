@@ -8,6 +8,7 @@ public class Person {
     private User user;
     private String identity;
     private String tel;
+    private String name;
     private String gender;
     private Date birthday;
 
@@ -16,6 +17,7 @@ public class Person {
         super();
         // TODO Auto-generated constructor stub
     }
+
 
     public int getId() {
         return id;
@@ -49,6 +51,14 @@ public class Person {
         this.tel = tel;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public String getGender() {
         return gender;
     }
@@ -56,7 +66,6 @@ public class Person {
     public void setGender(String gender) {
         this.gender = gender;
     }
-
 
     public Date getBirthday() {
         return birthday;
@@ -73,6 +82,7 @@ public class Person {
                 ", user=" + user +
                 ", identity='" + identity + '\'' +
                 ", tel='" + tel + '\'' +
+                ", name='" + name + '\'' +
                 ", gender='" + gender + '\'' +
                 ", birthday=" + birthday +
                 '}';
