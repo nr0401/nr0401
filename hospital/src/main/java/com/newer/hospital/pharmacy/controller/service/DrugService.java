@@ -6,15 +6,19 @@ import com.newer.hospital.communal.entity.Drug;
 import com.newer.hospital.communal.entity.Prescription;
 
 public interface DrugService {
-	
-	
-	public List<Drug> All();
-	
-	public List<Drug> Singleandmultidrug(String title);
-	
-	public List<Prescription> Whetherpay();
 
-	public int  AddDrug(Drug drug);
-	
-	public int UpdateDrug(int count,int id);
+
+    List<Drug> All();
+
+    List<Drug> Singleandmultidrug(String title);
+
+    List<Prescription> Whetherpay();
+
+    int AddDrug(Drug drug);
+
+    int UpdateDrug(int count, int id);
+
+    int addCount(int id, int count);
+
+
 }

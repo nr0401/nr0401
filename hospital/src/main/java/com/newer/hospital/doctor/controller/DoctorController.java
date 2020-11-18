@@ -45,6 +45,13 @@ public class DoctorController {
         doctorMapper.updateaw(asd, id);
     }
 
+    @PostMapping("/limit")
+    public List<Doctor> bbq(@RequestBody JSONObject limits) {
+        Integer offset = (Integer) limits.get("offset");
+        Integer limit = (Integer) limits.get("limit");
+        limit = (limit - 1) * offset;
+        return doctorMapper.doctorlimit(offset, limit);
+    }
 
     @PostMapping("/re/{id}")
     public List<Registration> d(@PathVariable int id, @RequestBody JSONObject daytime) {

@@ -1,5 +1,6 @@
 package com.newer.hospital.dept;
 
+import com.newer.hospital.communal.entity.Dept;
 import com.newer.hospital.communal.entity.Directory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -28,6 +29,17 @@ public class DirectoryController {
     @RequestMapping(value = "/directory", method = RequestMethod.GET)
     public List<Directory> allDirectory() {
         return directoryMapper.allDirectory();
+    }
+
+    /**
+     * 根据科室获取下面全部部门
+     *
+     * @param id
+     * @return
+     */
+    @RequestMapping(value = "/directory/dept/{id}", method = RequestMethod.GET)
+    public List<Dept> allByIdDirectory(@PathVariable Integer id) {
+        return directoryMapper.allByIdDirectory(id);
     }
 
     /**

@@ -109,21 +109,4 @@ public class Registration {
     public void setDayTime(String dayTime) {
         this.dayTime = dayTime;
     }
-
-    @Override
-    public String toString() {
-        return "Registration{" +
-                "id=" + id +
-                ", person=" + person +
-                ", time=" + time +
-                ", total=" + total +
-                ", status=" + status +
-                ", doctor=" + doctor +
-                ", mark=" + mark +
-                ", dept=" + dept +
-                ", appointment=" + appointment +
-                ", visitTime='" + visitTime + '\'' +
-                ", dayTime='" + dayTime + '\'' +
-                '}';
-    }
 }

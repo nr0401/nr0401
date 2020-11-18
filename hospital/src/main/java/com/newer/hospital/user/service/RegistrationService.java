@@ -49,11 +49,11 @@ public class RegistrationService {
     /**
      * 修改挂号状态
      *
-     * @param personId
+     * @param id
      * @return
      */
-    public Integer updateStatus(Integer personId) {
-        return registrationMapper.updateStatus(personId);
+    public Integer updateStatus(Integer id) {
+        return registrationMapper.updateStatus(id);
     }
 
 

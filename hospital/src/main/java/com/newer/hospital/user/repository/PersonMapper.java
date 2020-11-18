@@ -26,7 +26,7 @@ public interface PersonMapper {
      * @param person
      * @return
      */
-    @Insert("insert into person(user_id,identity,tel,gender,birthday) values(#{user.id},#{identity},#{tel},#{gender},#{birthday})")
+    @Insert("insert into person(user_id,identity,tel,gender,birthday,name) values(#{user.id},#{identity},#{tel},#{gender},#{birthday},#{name})")
     Integer addPerson(Person person);
 
 

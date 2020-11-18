@@ -3,7 +3,6 @@ package com.newer.hospital.user.repository;
 import com.newer.hospital.communal.entity.*;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
-import org.w3c.dom.stylesheets.LinkStyle;
 
 import java.util.List;
 
@@ -35,6 +34,8 @@ public interface RegistrationMapper {
      * @return
      */
     @Results(id = "registrationMap", value = {
+            @Result(column = "visit_time", property = "visitTime"),
+            @Result(column = "day_time", property = "dayTime"),
             @Result(column = "person_id", property = "person", javaType = Person.class, one = @One(select = "com.newer.hospital.user.repository.PersonMapper.personById")),
             @Result(column = "doctor_id", property = "doctor", javaType = Doctor.class, one = @One(select = "OneDoctor")),
             @Result(column = "dept_id", property = "dept", javaType = Dept.class, one = @One(select = "deptById"))
@@ -82,21 +83,80 @@ public interface RegistrationMapper {
     /**
      * 修改挂号人状态(签到)
      *
-     * @param personId
+     * @param id
      * @return
      */
-    @Update("update registration set status = 1 where person_id = #{personId}")
-    Integer updateStatus(Integer personId);
+    @Update("update registration set status = 1 where id = #{id}")
+    Integer updateStatus(Integer id);
 
+    /**
+     * 修改挂号信息
+     *
+     * @param registration
+     * @return
+     */
+    @Update("update registration set appointment=#{appointment},person_id=#{person.id},time=#{time},total=#{total},status=#{status},doctor_id=#{doctor.id},mark=#{mark},dept_id=#{dept.id},visit_time=#{visitTime},day_time=#{dayTime} where id = #{id}")
+    Integer updateRegistration(Registration registration);
 
     /**
      * 修改用户是否预约
      *
-     * @param personId
+     * @param id
      * @return
      */
-    @Update("update registration set appointment = 0 where person_id = #{personId}")
-    Integer updateAppointment(Integer personId);
+    @Update("update registration set appointment = 0 where id = #{id}")
+    Integer updateAppointment(Integer id);
 
 
+    /**
+     * 删除挂号信息
+     *
+     * @param id
+     * @return
+     */
+    @Delete("delete from registration where id = #{id}")
+    Integer deleteRegistration(Integer id);
+
+
+    /**
+     * 挂号分页
+     *
+     * @param offset
+     * @param limit
+     * @return
+     */
+    @Results(
+            value = {
+                    @Result(column = "person_id", property = "person", javaType = Person.class, one = @One(select = "personById")),
+                    @Result(column = "doctor_id", property = "doctor", javaType = Doctor.class, one = @One(select = "OneDoctor")),
+                    @Result(column = "dept_id", property = "dept", javaType = Dept.class, one = @One(select = "deptById"))
+            }
+    )
+    @Select("select * from registration where person_id = #{id} limit #{offset} offset #{limit}")
+    List<Registration> registrationlimit(int offset, int limit, int id);
+
+
+    /**
+     * 就诊分页
+     *
+     * @param offset
+     * @param limit
+     * @param id
+     * @return
+     */
+    @ResultMap("registrationMap")
+    @Select("select * from prescription where person_id = #{id}  limit #{offset} offset #{limit}")
+    List<Prescription> prescriptionlimit(Integer offset, Integer limit, Integer id);
+
+
+    /**
+     * 全部挂号分页
+     *
+     * @param offset
+     * @param limit
+     * @return
+     */
+    @ResultMap("registrationMap")
+    @Select("select * from registration limit #{offset} offset #{limit}")
+    List<Registration> registrationAlllimit(Integer offset, Integer limit);
 }

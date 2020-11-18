@@ -2,6 +2,8 @@ package com.newer.hospital.pharmacy.controller;
 
 import java.util.List;
 
+import com.alibaba.fastjson.JSONObject;
+import com.newer.hospital.communal.entity.Registration;
 import com.newer.hospital.pharmacy.controller.service.imp.DrugServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -28,9 +30,21 @@ public class DrugController {
      */
     @GetMapping("/pharmacy")
     public List<Drug> alldrug() {
-
         return drugimp.All();
+    }
 
+    /**
+     * 添加药瓶数量
+     *
+     * @param id
+     * @param count
+     * @return
+     */
+    @PostMapping("/pharmacy/{id}/{count}")
+    public int addCount(@PathVariable int id, @PathVariable int count) {
+        System.out.println(id);
+        System.out.println(count);
+        return drugimp.addCount(id, count);
     }
 
     /**
@@ -57,15 +71,15 @@ public class DrugController {
         return drugimp.Whetherpay();
     }
 
+
     /**
      * 存入药品
      *
      * @param drug
      * @return
      */
-    @PostMapping("/pharmacy/add")
+    @PostMapping("/add")
     public int Addgrug(@RequestBody Drug drug) {
-
         return drugimp.AddDrug(drug);
     }
 
@@ -78,8 +92,6 @@ public class DrugController {
      */
     @PutMapping("/pharmacy/DALETE/{count}/{id}")
     public int UpdateDrug(@PathVariable("count") int count, @PathVariable("id") int id) {
-
-
         return drugimp.UpdateDrug(count, id);
     }
 }

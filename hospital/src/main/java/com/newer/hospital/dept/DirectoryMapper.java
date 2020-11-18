@@ -1,5 +1,6 @@
 package com.newer.hospital.dept;
 
+import com.newer.hospital.communal.entity.Dept;
 import com.newer.hospital.communal.entity.Directory;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
@@ -23,6 +24,15 @@ public interface DirectoryMapper {
      */
     @Select("select * from directory")
     List<Directory> allDirectory();
+
+    /**
+     * 根据科室获取部门
+     *
+     * @param id
+     * @return
+     */
+    @Select("select * from dept where directory_id = #{id}")
+    List<Dept> allByIdDirectory(Integer id);
 
     /**
      * 根据id查询科室

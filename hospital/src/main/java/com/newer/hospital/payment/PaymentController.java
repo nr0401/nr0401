@@ -22,6 +22,7 @@ public class PaymentController {
 
     @Autowired
     PresciptionMapper presciptionMapper;
+
     @Autowired
     PaymenthisoryMapper paymenthisoryMapper;
 
@@ -34,9 +35,7 @@ public class PaymentController {
     @PostMapping("/{id}")
     void a(@PathVariable int id) {
         paymentService.a(id);
-
     }
-
 
 
     /**
